@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-5-7 14:32:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.zjy.entity.Customer" table="CUSTOMER">
+        <id name="cid" type="java.lang.String" access="field">
+            <column name="CID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cname" type="java.lang.String">
+            <column name="CNAME" />
+        </property>
+        <property name="csex" type="java.lang.String">
+            <column name="CSEX" />
+        </property>
+        <property name="ctel" type="java.lang.String">
+            <column name="CTEL" />
+        </property>
+        <set name="zhuRoom" lazy="false">
+        	<key column="CID" ></key>
+        	<one-to-many class="com.zjy.entity.ZhuRoom"/>
+        </set>
+        <set name="zhuHistory" lazy="false">
+        	<key column="CID" ></key>
+        	<one-to-many class="com.zjy.entity.ZhuHistory"/>
+        </set>
+    </class>
+</hibernate-mapping>

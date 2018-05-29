@@ -1,0 +1,41 @@
+<!DOCTYPE web-app PUBLIC  
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"  
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >  
+  
+<web-app>  
+  
+  <!-- ================spring mvc 适配器================ -->  
+    <servlet>  
+        <servlet-name>springMVC</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:/applicationContext/application_spring_mvc.xml</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>UTF-8</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>forceEncoding</param-name>  
+            <param-value>true</param-value>  
+        </init-param> 
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+    <servlet-mapping>  
+        <servlet-name>springMVC</servlet-name>  
+        <url-pattern>/</url-pattern>  
+    </servlet-mapping>  
+    
+    
+    
+  <!-- ================================================== -->  
+    <servlet-mapping>          
+        <servlet-name>default</servlet-name>         
+        <url-pattern>*.html</url-pattern>        
+    </servlet-mapping>     
+  
+    <welcome-file-list>  
+        <welcome-file>login.jsp</welcome-file>  
+    </welcome-file-list>  
+</web-app> 

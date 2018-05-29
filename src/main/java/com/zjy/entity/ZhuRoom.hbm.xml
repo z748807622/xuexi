@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-5-7 14:32:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.zjy.entity.ZhuRoom" table="ZHUROOM">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="room" class="com.zjy.entity.Room" fetch="join" insert="true" update="true" lazy="false">
+            <column name="RID" />
+        </many-to-one>
+        <many-to-one name="customer" class="com.zjy.entity.Customer" fetch="join" insert="true" update="true" lazy="false">
+            <column name="CID" />
+        </many-to-one>
+        <property name="ldate" type="java.sql.Date">
+            <column name="LDATE" />
+        </property>
+        <property name="paymoney" type="int">
+            <column name="PAYMONEY" />
+        </property>
+    </class>
+</hibernate-mapping>
